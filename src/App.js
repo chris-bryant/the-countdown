@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Progress, Button, Card } from 'reactstrap';
+import moment from 'moment';
 
 class App extends Component {
   render() {
+    const today = moment().startOf('day');
+    const end = moment('11-14-2019').startOf('day');
+    const daysLeft = end.diff(today, 'days');
+    const percentDone = Math.floor((1 - (daysLeft / 365)) * 100);
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div>
+          <h5>Removal</h5>
+          <Progress striped color="danger" value={percentDone} />
+        </div>
       </div>
     );
   }
