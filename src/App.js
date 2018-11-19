@@ -13,8 +13,14 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <h5>Removal</h5>
-          <Progress striped color="danger" value={percentDone} />
+          <p>
+            <h5>Removal</h5>
+            <Progress striped color="success" value={percentDone} />
+          </p>
+          <p>
+            <h5>Community</h5>
+            <Progress striped color="success" value={0} max={120} />
+          </p>
         </div>
       </div>
     );
