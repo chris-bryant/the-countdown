@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <h5>Removal</h5>
+          <h5>Removal - {percentDone}%</h5>
           <Progress striped color="danger" value={percentDone} />
         </div>
       </div>
