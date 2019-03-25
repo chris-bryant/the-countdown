@@ -20,6 +20,7 @@ class App extends Component {
           </p>
           <p>
             <h5>Community</h5>
+            {csDaysDone}
             <Progress striped color="success" value={csDaysDone} />
           </p>
         </div>
