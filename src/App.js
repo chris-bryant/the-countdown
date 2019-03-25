@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Progress, Button, Card } from 'reactstrap';
+import { Progress } from 'reactstrap';
 import moment from 'moment';
 
 class App extends Component {
@@ -20,7 +20,6 @@ class App extends Component {
           </p>
           <p>
             <h5>Community</h5>
-            {csDaysDone}
             <Progress striped color="success" value={csDaysDone} />
           </p>
         </div>
