@@ -9,7 +9,7 @@ class App extends Component {
     const end = moment('11-14-2019').startOf('day');
     const daysLeft = end.diff(today, 'days');
     const percentDone = Math.floor((1 - (daysLeft / 365)) * 100);
-    const csDaysDone = 1;
+    const csDaysDone = 1 / 15;
 
     return (
       <div className="App">
@@ -20,7 +20,7 @@ class App extends Component {
           </p>
           <p>
             <h5>Community</h5>
-            <Progress striped color="success" value={csDaysDone} max={15} />
+            <Progress striped color="success" value={csDaysDone} />
           </p>
         </div>
       </div>
