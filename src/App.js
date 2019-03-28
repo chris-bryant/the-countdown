@@ -9,7 +9,26 @@ class App extends Component {
     const end = moment('11-14-2019').startOf('day');
     const daysLeft = end.diff(today, 'days');
     const percentDone = Math.floor((1 - (daysLeft / 365)) * 100);
-    const csDaysDone = 1;
+    const csDays = [
+      moment('03-23-2019'),
+      moment('03-30-2019'),
+      moment('04-02-2019'),
+      moment('04-03-2019'),
+      moment('04-04-2019'),
+      moment('04-05-2019'),
+      moment('04-06-2019'),
+      moment('04-13-2019'),
+      moment('04-20-2019'),
+      moment('04-27-2019'),
+      moment('04-30-2019'),
+      moment('05-01-2019'),
+      moment('05-02-2019'),
+      moment('05-03-2019'),
+      moment('05-04-2019')
+    ];
+
+    const isAfterMap = csDays.map(day => today.isAfter(day.startOf('day')));
+    const csDaysDone = isAfterMap.filter(after => !!after).length;
 
     return (
       <div className="App">
@@ -19,7 +38,7 @@ class App extends Component {
             <Progress striped color="success" value={percentDone} />
           </p>
           <p>
-            <h5>Community</h5>
+            <h5>Community - {(csDaysDone / 15).toFixed(2)}%</h5>
             <Progress striped color="info" value={csDaysDone} max={15} />
           </p>
         </div>
