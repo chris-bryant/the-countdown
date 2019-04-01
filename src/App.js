@@ -38,7 +38,7 @@ class App extends Component {
             <Progress striped color="success" value={percentDone} />
           </p>
           <p>
-            <h5>Community - {(csDaysDone / 15).toFixed(2)}%</h5>
+            <h5>Community - {((csDaysDone / 15) * 100).toFixed(2)}%</h5>
             <Progress striped color="info" value={csDaysDone} max={15} />
           </p>
         </div>
