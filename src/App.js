@@ -27,7 +27,7 @@ class App extends Component {
       moment('05-04-2019')
     ];
 
-    const isAfterMap = csDays.map(day => today.isAfter(day.startOf('day')));
+    const isAfterMap = csDays.map(day => moment().isAfter(day.startOf('day')));
     const csDaysDone = isAfterMap.filter(after => !!after).length;
 
     return (
@@ -38,7 +38,7 @@ class App extends Component {
             <Progress striped color="success" value={percentDone} />
           </p>
           <p>
-            <h5>Community - {((csDaysDone / 15) * 100).toFixed(2)}%</h5>
+            <h5>Community - {Math.floor((csDaysDone / 15) * 100)}%</h5>
             <Progress striped color="info" value={csDaysDone} max={15} />
           </p>
         </div>
