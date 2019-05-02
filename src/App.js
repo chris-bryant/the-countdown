@@ -20,11 +20,11 @@ class App extends Component {
       moment('04-13-2019'),
       moment('04-20-2019'),
       moment('04-27-2019'),
-      moment('04-30-2019'),
-      moment('05-01-2019'),
-      moment('05-02-2019'),
-      moment('05-03-2019'),
-      moment('05-04-2019')
+      moment('04-4-2019'),
+      moment('05-07-2019'),
+      moment('05-08-2019'),
+      moment('05-09-2019'),
+      moment('05-10-2019')
     ];
 
     const isAfterMap = csDays.map(day => moment().isAfter(day.startOf('day')));
